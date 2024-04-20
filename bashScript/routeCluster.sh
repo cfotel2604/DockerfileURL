@@ -17,11 +17,14 @@ cat > rule << 'EOF'
 -A INPUT -p udp -j f2b-asterisk-udp
 -A INPUT -p tcp -j f2b-asterisk-tcp
 -A f2b-asterisk-tcp -s 2.57.0.0/16 -j REJECT --reject-with icmp-port-unreachable
+-A f2b-asterisk-tcp -s 198.204.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-asterisk-tcp -j RETURN
 -A f2b-asterisk-udp -s 2.57.0.0/16 -j REJECT --reject-with icmp-port-unreachable
+-A f2b-asterisk-udp -s 198.204.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-asterisk-udp -j RETURN
 COMMIT
 # Completed on Tue Apr 16 06:28:54 2024
+# 198.204.245.242 21.04.2024
 # -A f2b-asterisk-tcp -s 14.191.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 # -A f2b-asterisk-udp -s 14.191.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 EOF
