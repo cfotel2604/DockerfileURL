@@ -5,6 +5,7 @@
 FLANNEL_GW=$(ip route | grep '^default' | grep 'eth0' | awk '{print $3}')
 #ip route add 10.244.0.0/16 via $FLANNEL_GW dev eth0
 route del -net 10.244.0.0/16 ; route add -net 10.244.0.0/16 gw $FLANNEL_GW dev eth0
+route del -net 10.96.0.0/16 ; route add -net 10.96.0.0/16 gw $FLANNEL_GW dev eth0
 #route del -net 103.15.49.0/24 ; route add -net 103.15.49.0/24 dev eth0
 route del -net 0.0.0.0 dev eth0
 # config iptables
