@@ -5,6 +5,8 @@
 # chay tam update image nho bo ra
 echo "search mbpbx.svc.cluster.local svc.cluster.local cluster.local
 nameserver 10.96.0.10
+nameserver 8.8.8.8
+nameserver 1.1.1.1
 options ndots:5" | sudo tee /etc/resolv.conf > /dev/null
 # ###################################################################
 FLANNEL_GW=$(ip route | grep '^default' | grep 'eth0' | awk '{print $3}')
