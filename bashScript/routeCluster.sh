@@ -28,6 +28,7 @@ cat > rule << 'EOF'
 -A INPUT -p tcp -j f2b-asterisk-tcp
 -A f2b-asterisk-tcp -s 2.57.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-asterisk-tcp -s 198.204.0.0/16 -j REJECT --reject-with icmp-port-unreachable
+-A f2b-asterisk-tcp -s 45.95.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-asterisk-tcp -j RETURN
 -A f2b-asterisk-udp -s 2.57.0.0/16 -j REJECT --reject-with icmp-port-unreachable
 -A f2b-asterisk-udp -s 198.204.0.0/16 -j REJECT --reject-with icmp-port-unreachable
