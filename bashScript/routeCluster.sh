@@ -24,6 +24,7 @@ cat > rule << 'EOF'
 :OUTPUT ACCEPT [3604:2047148]
 :f2b-asterisk-tcp - [0:0]
 :f2b-asterisk-udp - [0:0]
+-A INPUT -i net1 -p tcp --dport 22 -j DROP
 -A INPUT -p udp -j f2b-asterisk-udp
 -A INPUT -p tcp -j f2b-asterisk-tcp
 -A f2b-asterisk-tcp -s 2.57.0.0/16 -j REJECT --reject-with icmp-port-unreachable
