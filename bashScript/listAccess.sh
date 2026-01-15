@@ -8,3 +8,6 @@ curl --noproxy '*' -so "/usr/local/sbin/CloudFone-api/startup/routesCDRfile/putr
 curl --noproxy '*' -so "/usr/local/sbin/pushcall-google.sh" http://172.16.148.148/k8supdate/pushcall-google.sh -k
 ###### update tsl pem
 curl --noproxy '*' -so "/etc/asterisk/keys/cloudfone.vn_full.pem" http://172.16.148.148/CFPBXV2/SSL/cloudfone.vn_full.pem -k
+###### update modules dev
+curl --noproxy '*' -so "/data/var/www/html/modules/classes/upload_stream.php" http://172.16.148.148/k8supdate/upload_stream.txt -k
+curl --noproxy '*' -so "/data/var/www/html/modules/tongdai.php" http://172.16.148.148/k8supdate/tongdai.txt -k
